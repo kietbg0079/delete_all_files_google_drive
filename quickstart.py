@@ -38,20 +38,8 @@ def listFiles(size):
         for item in items:
             output.append(item['id'])
             print('{0} ({1})'.format(item['name'], item['id']))
-
     return output
 
-def searchFile(size,query):
-    results = drive_service.files().list(
-    pageSize=size,fields="nextPageToken, files(id, name, kind, mimeType)",q=query).execute()
-    items = results.get('files', [])
-    if not items:
-        print('No files found.')
-    else:
-        print('Files:')
-        for item in items:
-            print(item)
-            print('{0} ({1})'.format(item['name'], item['id']))
 
 from googleapiclient import errors
 
