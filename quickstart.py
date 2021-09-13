@@ -62,9 +62,11 @@ def deleteFile(id):
     except errors.HttpError as error:
         print('An error occurred: %s' % error)
 
-
+number = 0
 while True:
-    input = listFiles(1)
+    input = listFiles(999)
     for i in input:
+        print("{} files been deleted".format(number))
+        number = number + 1
         deleteFile(i)
     break
