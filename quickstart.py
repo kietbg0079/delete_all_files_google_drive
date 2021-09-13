@@ -57,4 +57,4 @@ while True:
         print("{} files been deleted".format(number))
         number = number + 1
         deleteFile(i)
-    break
+
